@@ -78,13 +78,17 @@ main{
     gap:2rem;
 }
 
-#prev-button, #next-button{
+#prev-button, #next-button, #submit-button{
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
     background-color: rgb(15, 31, 48);
     color: white;
+}
+
+#submit-button{
+    display: none;
 }
 
 .result{
