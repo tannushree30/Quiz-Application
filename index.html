@@ -8,35 +8,33 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the General Knowledge Quiz</h1>
+        <h1 id="page-heading">Welcome to the General Knowledge Quiz</h1>
     </header>
     <main>
         <div id="quiz-container">
             <div id="number"> <span>Question <span id="quesNum">1</span> of 10</span></div>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
             <div id="question">
-                <h2>What is the capital of France?</h2>
+                <h2 id="question-text"></h2>
             </div>
             <div id="options-container">
-                <button class="option" id="option-a">A) Berlin</button>
-                <button class="option" id="option-b">B) Madrid</button>
-                <button class="option" id="option-c">C) Paris</button>
-                <button class="option" id="option-d">D) Rome</button>
+                <button class="option" id="option-a"></button>
+                <button class="option" id="option-b"></button>
+                <button class="option" id="option-c"></button>
+                <button class="option" id="option-d"></button>
             </div>
             <div class="buttons">
                 <button id="prev-button">Previous Question</button> 
                 <button id="next-button">Next Question</button>
+            </div>
+            <div class="buttons">
                 <button id="submit-button">Submit Quiz</button>
+                <button id="back-result-button">Result</button>
             </div>
         </div>
     </main>
-    <div class="result">
-        <h2>Quiz Complete!</h2>
-        <p>Your Score: <span id="score">0</span>/10</p>
-        <div class="buttons">
-            <button id="review-button">Review Answers</button>
-            <button id="restart-button">Restart Quiz</button>
-        </div>
-    </div> 
     <script src="script.js"></script>
 </body>
 </html>
