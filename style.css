@@ -178,24 +178,64 @@ main{
 }
 
 #text{
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: bold;
     color: rgb(37, 151, 73);
 }
 
 #result-container p{
-    font-size: 2rem;
+    margin-top: 5px;
+    font-size: 2.5rem;
 }
 
 #score-display{
-    height: 4.5rem;
+    height: 6rem;
     padding: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 5.5rem;
     gap: 2rem;
     font-weight: 549;
+}
+
+#stats{
+    display:flex;
+    justify-content:center;
+    gap:2.5rem;
+    margin: 1rem 0 1rem;
+    flex-wrap:wrap;
+}
+
+.stat{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1.3rem;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.count{
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.correct{
+    color: #16A34A;   
+}
+
+.incorrect{
+    color: #DC2626;   
+}
+
+.unattempted{
+    color: #6B7280;  
 }
 
 /*mobile responsive*/

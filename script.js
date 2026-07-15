@@ -13,6 +13,9 @@ let restartBtn = document.querySelector("#restart-button");
 let reviewBtn = document.querySelector("#review-button");
 let scoreDis = document.querySelector("#score");
 let resText = document.querySelector("#text");
+let correctCount = document.querySelector("#correct-count");
+let incorrectCount = document.querySelector("#incorrect-count");
+let unattemptedCount = document.querySelector("#unattempted-count");
 let progressBar = document.querySelector("#progress-bar");
 let pageHeading = document.querySelector("#page-heading");
 const isReviewMode = () => sessionStorage.getItem("reviewMode") === "true";
@@ -225,18 +228,47 @@ if(restartBtn){
     });
 };
 
-//score display
-if(scoreDis){
-    scoreDis.innerText = localStorage.getItem("score");
-    if(scoreDis.innerText < 5){
+// Score display
+if (scoreDis) {
+    let score = Number(localStorage.getItem("score"));
+    scoreDis.innerText = score;
+
+    if (score < 5) {
         resText.innerText = "Keep Practicing!";
         resText.style.color = "#d26363";
     }
-    else if(scoreDis.innerText === 5 || scoreDis.innerText <=9){
+    else if (score <= 9) {
         resText.innerText = "Great Job!";
         resText.style.color = "#61bf61";
     }
-};
+    else {
+        resText.innerText = "Outstanding!";
+        resText.style.color = "#259749";
+    }
+
+    // Calculate statistics
+    let savedAnswers = JSON.parse(localStorage.getItem("userSelected")) || [];
+
+    let correct = 0;
+    let incorrect = 0;
+    let unattempted = 0;
+
+    savedAnswers.forEach((selected, index) => {
+        if (selected === null) {
+            unattempted++;
+        }
+        else if (questions[index].option[selected] === questions[index].answer) {
+            correct++;
+        }
+        else {
+            incorrect++;
+        }
+    });
+
+    correctCount.innerText = correct;
+    incorrectCount.innerText = incorrect;
+    unattemptedCount.innerText = unattempted;
+}
 
 //Review Answer
 reviewBtn?.addEventListener("click",() =>{
