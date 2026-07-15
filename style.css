@@ -21,7 +21,7 @@ header{
 }
 
 main{
-    margin: 10px 20px 20px 20px;
+    margin: 10px 20px 15px 20px;
 
 }
 
@@ -29,6 +29,7 @@ main{
     padding: 10px;
     border-radius: 5px;
     height: 78vh;
+    margin: 0 auto;
 } */
 
 #quiz-container{
@@ -36,6 +37,7 @@ main{
     width: 100%;
     margin: 0 auto;
     padding: 10px;
+    height: 78vh;
     border-radius: 5px;
 }
 
@@ -53,7 +55,7 @@ main{
     background-color: #d9d9d9;
     border-radius: 10px;
     overflow: hidden;
-    margin: 15px 0 15px 0;
+    margin: 20px 0 25px 0;
 }
 
 #progress-bar{
@@ -65,11 +67,10 @@ main{
 }
 
 #question{
-    height: 14vh;
+    height: 14.5vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    min-height: 140px;
 }
 
 #question-text{
@@ -79,11 +80,12 @@ main{
 }
 
 #options-container{
-    height: 40vh;
+    height: 38vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .option{
@@ -106,6 +108,7 @@ main{
     justify-content: center;
     align-items: center;
     gap:3rem;
+    margin-top: 5px;
 }
 
 #prev-button, #next-button, #submit-button, #back-result-button, #restart-button, #review-button{
@@ -122,6 +125,10 @@ main{
 #review-button:hover, #restart-button:hover{
     transform: translateY(-2px);
 }
+
+#submit-button:hover{
+    transform: scale(1.05);
+} 
 
 #submit-button{
     animation: popIn 0.25s ease;
